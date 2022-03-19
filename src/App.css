@@ -1,38 +1,261 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 16px/1.4 "Mulish", sans-serif;
+  color: #333;
+  background: #ffeded;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button:focus,
+input[type="text"]:focus {
+  outline: none;
+}
+
+#wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.playlist {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -5px #ffa6a6;
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+/* header */
+
+#header {
+  background: #f53838;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+}
+
+#header h1 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* main */
+
+.main {
+  padding: 30px;
+}
+
+/* playlist form */
+
+#playlistForm {
+  position: relative;
+  margin: 0 0 20px;
+}
+
+#playlistForm input,
+textarea {
+  border: 1px solid #eee;
+  padding: 10px 100px 10px 10px;
+  width: 100%;
+  font: 16px/1.4 "Mulish", sans-serif;
+  color: #333;
+  outline: none;
+}
+
+#playlistForm button {
+  padding: 0 1em;
+  font: 16px/1.4 "Mulish", sans-serif;
+  background: #ff4141;
+  color: #fff;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  /* position: absolute; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* right: 5px; */
+  height: 40px;
+  transition: opacity 0.3s linear;
+  margin-top: 2%;
+  border-radius: 7px !important;
+  box-shadow: #ffcbcb 0px 8px 24px;
+  width: 100%;
+}
+
+#playlistForm button:hover {
+  opacity: 0.7;
+}
+
+/* show hide */
+
+.showHide {
+  margin: 0 0 20px;
+}
+
+.showHide input[type="checkbox"] {
+  margin: 0 0 0 5px;
+}
+
+/* playlist-ul */
+
+#playlist-ul {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#playlist-ul h4 {
+  font: 20px;
+  font-weight: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#playlist-ul li {
+  padding: 20px;
+  margin: 0 0 10px;
+  border-radius: 0.2em;
+  border: 1px solid #eee;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#playlist-ul img {
+  height: 170px;
+  width: 170px;
+  border-radius: 25%;
+}
+
+#playlist-ul li span,
+#playlist-ul li input[type="text"] {
+  font: 20px/1.4 "Mulish", sans-serif;
+  margin: 0 0 5px;
+  display: block;
+}
+
+#playlist-ul li input[type="text"] {
+  border: 1px solid #eee;
+  padding: 10x 100px 10px 10px;
+  width: 100%;
+  height: 50px;
+  color: #333;
+}
+
+#playlist-ul li label {
+  font-size: 14px;
+  display: block;
+  margin: 0 0 10px;
+  color: rgba(112, 112, 112, 0.55);
+}
+
+#playlist-ul li label input[type="checkbox"] {
+  margin: 0 0 0 5px;
+}
+
+#playlist-ul li button {
+  font-size: 14px;
+  margin: 0 5px 0 0;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: white;
+  background: #70b3ff;
+  border: 0;
+  cursor: pointer;
+  transition: opacity 0.3s linear;
+}
+
+#playlist-ul li button:last-child {
+  background-color: #ff7f7f;
+}
+
+#playlist-ul li button:hover {
+  opacity: 0.7;
+}
+
+/* responded */
+
+#playlist-ul li.responded {
+  transition: 0.4s;
+  border-color: #70b3ff;
+}
+
+#playlist-ul li.responded label,
+#playlist-ul li.responded span {
+  transition: 0.4s;
+  color: #70b3ff;
+}
+
+.callingapi {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+#wrapper-two {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.playlist-two {
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px -5px #fffcfc;
+  width: 800px;
+}
+
+.callapi {
+  width: 100%;
+  height: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  border: none;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f53838;
+  color: #fff;
+  border-radius: 5px;
+  padding: 1%;
 }
 
-.App-link {
-  color: #61dafb;
+.titleLogo {
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 840px) {
+  .playlist {
+    margin: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  .callapi {
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  body,
+  #playlistForm input,
+  #playlistForm button {
+    font-size: 14px;
+  }
+  #header h1 {
+    font-size: 20px;
+  }
+  #playlist-ul li span,
+  #playlist-ul li input[type="text"] {
+    font-size: 16px;
+  }
+  #playlist-ul li button {
+    font-size: 12px;
   }
 }
